@@ -19,22 +19,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        inputAmountTextField.becomeFirstResponder()
     }
-
+    
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     @IBAction func updateTotalAmount(_ sender: Any) {
-        let tipPercentage = [0.15, 0.18, 0.2];
-        let amount = Double(inputAmountTextField.text!) ?? 0;
+        let tipPercentage = [0.15, 0.18, 0.2]
+        let amount = Double(inputAmountTextField.text!) ?? 0
         
-        let tip = tipPercentage[tipPercentControl.selectedSegmentIndex]*amount;
-        let total = tip+amount;
+        let tip = tipPercentage[tipPercentControl.selectedSegmentIndex]*amount
+        let total = tip+amount
         
-        tipLabel.text = String(format: "%.2f", tip);
-        totalLabel.text = String(format: "$%.2f", total);
+        tipLabel.text = String(format: "%.2f", tip)
+        totalLabel.text = String(format: "$%.2f", total)
     }
     
 }
