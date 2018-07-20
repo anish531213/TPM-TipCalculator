@@ -1,5 +1,5 @@
 
-# Pre-work - *Name of App Here*
+# Pre-work - *TMP-TipCalculator*
 
 **TPM-TipCalculator** is a tip calculator application for iOS.
 
